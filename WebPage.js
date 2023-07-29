@@ -64,9 +64,13 @@ const BasePage = function (customAudio = null) {
 
   this.pressAcceptButton = async function () {
     let buttons = await this.findByClassName(
-      "artdeco-button--secondary invitation-card__action-btn"
+      "artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view"
     );
     await buttons.click();
+    let buttons2 = await this.findByClassName(
+      "artdeco-modal__confirm-dialog-btn artdeco-button artdeco-button--2 artdeco-button--primary ember-view"
+    );
+    await buttons2.click();
   };
 
   this.scrollToBottom = async function () {
